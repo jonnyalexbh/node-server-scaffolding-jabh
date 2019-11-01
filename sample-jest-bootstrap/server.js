@@ -1,5 +1,8 @@
 const app = require('./app');
+const config = require('./config');
 
-app.listen(3000, () => {
-  console.log('Our server is working with the port in the port: 300!');
+const port = config.common.api.port || 3000;
+
+const server = app.listen(port, () => {
+  console.log(`listening http://localhost:${server.address().port}`);
 });
