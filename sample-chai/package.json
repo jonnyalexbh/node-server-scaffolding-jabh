@@ -1,0 +1,17 @@
+{
+  "name": "sample-chai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "maths.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0"
+  }
+}
