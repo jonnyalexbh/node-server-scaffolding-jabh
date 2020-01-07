@@ -1,15 +1,15 @@
-exports.addition = (a, b) => {
+exports.add = (a, b) => {
   return a + b;
 }
 
-exports.multiplication = (a, b) => {
+exports.multiply = (a, b) => {
   return a * b;
 }
 
-exports.subtraction = (a, b) => {
+exports.subtract = (a, b) => {
   return a - b;
 }
 
-exports.division = (a, b) => {
+exports.divide = (a, b) => {
   return a / b;
 }
