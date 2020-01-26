@@ -1,6 +1,12 @@
 const app = require('./app');
-const port = 3000;
+const config = require('./config');
+const logger = require('./app/logger');
 
-app.listen(port, () => {
-  console.log(`Listening on port: ${port}`);
-});
+const port = config.common.api.port || 3000;
+
+Promise.resolve()
+  .then(() => {
+    app.listen(port);
+    logger.info(`Listening on port: ${port}`);
+  })
+  .catch(logger.error);
