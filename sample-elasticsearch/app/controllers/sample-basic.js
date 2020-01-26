@@ -1,6 +1,7 @@
-const logger = require('../logger');
-const config = require('../../config').common.elasticsearch;
 const ES = require('@elastic/elasticsearch');
+const config = require('../../config').common.elasticsearch;
+const { TRANSACTION_ID_TEST } = require('../constants');
+const logger = require('../logger');
 
 const client = new ES.Client({
   node: config.host,
@@ -9,13 +10,13 @@ const client = new ES.Client({
   }
 });
 
-exports.elasticsearchTest = async (req, res) => {
+exports.getTransactionTest = async (req, res) => {
   try {
     const result = await client.search({
       index: config.index,
       body: {
         query: {
-          match: { _id: '829ce6fd30abff0fc22cef0f003985ae3545ee3825f32e6459aae0da2f8be241' }
+          match: { _id: TRANSACTION_ID_TEST }
         }
       }
     });
