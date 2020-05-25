@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Hello World with SAM
+Globals:
+  Function:
+    Runtime: nodejs12.x
+    MemorySize: 128
+    Timeout: 5
+Resources:
+  eventLogger:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: logger.handler
+      Timeout: 3
+      Events:
+        GetLogs:
+          Type: Api
+          Properties:
+            Path: /logs
+            Method: get
+        FileUpload:
+          Type: S3
+          Properties:
+            Bucket:
+              Ref: MyBucket
+            Events: s3:ObjectCreated:*
+      CodeUri: s3://jabh-sam/380169f0b18a2e7713b35e719f642234
+  MyBucket:
+    Type: AWS::S3::Bucket
+  addnumbers:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: add.handler
+      Events:
+        PostAdd:
+          Type: Api
+          Properties:
+            Path: /add
+            Method: post
+      CodeUri: s3://jabh-sam/380169f0b18a2e7713b35e719f642234
