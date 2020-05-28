@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sample Lambda AWS Hello
+Resources:
+  sampleLambdaAwsHello:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs12.x
+      CodeUri: s3://jabh-sam/502a35f9927f0c17b513561f9a5e6aff
+      MemorySize: 128
+      Timeout: 5
