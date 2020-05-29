@@ -14,4 +14,8 @@ Resources:
       Environment:
         Variables:
           YEAR: ''
+          DB_HOST: ''
+          DB_NAME: ''
+          DB_USER: ''
+          DB_PASSWORD: ''
       Timeout: 3
