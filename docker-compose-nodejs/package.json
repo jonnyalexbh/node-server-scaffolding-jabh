@@ -8,8 +8,8 @@
     "start:dev": "nodemon -L --inspect app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "jonnyalex.bh",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1"

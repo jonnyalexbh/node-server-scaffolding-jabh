@@ -1,5 +1,5 @@
 {
-  "name": "docker-nodejs-express",
+  "name": "docker-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,8 +8,8 @@
     "start:dev": "nodemon --inspect app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "jonnyalex.bh",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
