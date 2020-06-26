@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app-nodejs:
+    build: .
+    container_name: nodenestor
+    ports:
+      - "8080:3000"
+  db:
+    container_name: dbnestor
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: secret1189
