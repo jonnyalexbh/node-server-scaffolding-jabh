@@ -1,0 +1,9 @@
+# Mac Files
+.DS_Store
+*/DS_Store
+
+# Dependency directory
+node_modules
+
+# VS Code
+.vscode/
