@@ -2,16 +2,42 @@ service: serverless-sequelize
 
 plugins:
   - serverless-offline
+  - serverless-jest-plugin
+  - serverless-dotenv-plugin
+
+custom:
+  dotenv:
+   basepath: ./
+   logging: false
 
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    STAGE: ${self:provider.stage}
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_USERNAME: ${env:DB_USERNAME}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
+    DB_NAME_TEST: ${env:DB_NAME_TEST}
 
 functions:
-  hello:
-    handler: handler.hello
+  getAllAuthors:
+    handler: handler.getAllAuthors
+    name: getAllAuthors
     events:
-     - http:
-        path: users
-        method: get
-        cors: true
+      - http:
+          path: authors
+          method: get
+          cors: true
+
+  storeAuthor:
+    handler: handler.storeAuthor
+    name: storeAuthor
+    events:
+      - http:
+          path: author
+          method: post
+          cors: true
