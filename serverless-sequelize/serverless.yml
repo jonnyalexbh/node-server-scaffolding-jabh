@@ -3,8 +3,10 @@ service: serverless-sequelize
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
+  - serverless-sequelize-migrations
 
 custom:
+  migrationsPath: './src/migrations'
   dotenv:
    basepath: ./
    logging: false
@@ -14,6 +16,7 @@ provider:
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
   environment:
+    DB_DIALECT: 'mysql'
     STAGE: ${self:provider.stage}
     DB_HOST: ${env:DB_HOST}
     DB_PORT: ${env:DB_PORT}

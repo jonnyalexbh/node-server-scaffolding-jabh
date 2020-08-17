@@ -21,7 +21,7 @@ exports.storeAuthor = async (body) => {
   try {
     const { firstName, lastName, email, dateOfBirth } = parseCreateAuthor(body);
     logger.info('Trying to create a author');
-    const author = await Authorr.create({ firstName, lastName, email, dateOfBirth });
+    const author = await Author.create({ firstName, lastName, email, dateOfBirth });
     return json(author, 201);
   } catch (error) {
     logger.error(error.message);
