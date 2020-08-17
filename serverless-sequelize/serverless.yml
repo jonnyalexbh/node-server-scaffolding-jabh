@@ -2,7 +2,6 @@ service: serverless-sequelize
 
 plugins:
   - serverless-offline
-  - serverless-jest-plugin
   - serverless-dotenv-plugin
 
 custom:
