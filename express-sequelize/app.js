@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { Author } = require('./models/index');
+const { Publication } = require('./models/index');
 
 // app
 const app = express();
@@ -16,6 +18,21 @@ app.get('/', function (req, res, next) {
 
 app.post('/store-user', function (req, res, next) {
   res.send(req.body);
+})
+
+app.get('/authors', async (req, res, next) => {
+  const authors = await Author.findAll();
+  res.send({ authors });
+})
+
+app.get('/authors-with-publications', async (req, res, next) => {
+  const authors = await Author.findAll({ include: Publication });
+  res.send({ authors });
+})
+
+app.get('/publications', async (req, res, next) => {
+  const publications = await Publication.findAll({ include: Author });
+  res.send({ publications });
 })
 
 const server = app.listen(port, () => {

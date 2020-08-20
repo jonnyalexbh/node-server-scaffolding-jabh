@@ -9,7 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       author_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'authors',
+          },
+          key: 'id'
+        },
       },
       title: {
         type: Sequelize.STRING
@@ -17,11 +23,11 @@ module.exports = {
       body: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

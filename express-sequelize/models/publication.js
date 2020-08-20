@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Publication.belongsTo(models.Author);
     }
   };
   Publication.init({
@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Publication',
+    tableName: 'publications',
+    underscored: true,
   });
   return Publication;
 };
