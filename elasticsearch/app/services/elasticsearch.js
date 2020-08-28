@@ -1,5 +1,5 @@
 const ES = require('@elastic/elasticsearch');
-const errorHandler = require('../services/error_handler');
+const errorHandler = require('./error_handler');
 const config = require('../../config').common.elasticsearch;
 const logger = require('../logger');
 
