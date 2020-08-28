@@ -8,5 +8,22 @@ _We are going to build a REST API which is going to connect to an external (publ
 ```sh
 $ npm init
 $ npm i express
+$ npm i nodemon --save-dev
 $ node app.js
+```
+
+**Scripts**
+
+```json
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon --inspect app.js"
+  },
+```
+
+**Install eslint airbnb**
+
+```sh
+$ npm install eslint --save-dev
+$ npx eslint --init
 ```
