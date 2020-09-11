@@ -53,3 +53,12 @@ const server = app.listen(port, () => {
 });
 
 ```
+
+**Install Jest**
+
+```sh
+$ npm install --save-dev jest
+$ npx jest
+$ npx jest unit/example.test.js
+$ npx jest --coverage
+```
