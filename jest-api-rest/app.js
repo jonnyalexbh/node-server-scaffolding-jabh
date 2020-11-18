@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const routes = require('./app/routes');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 // middlewares
 app.use(bodyParser.json()); // support parsing of application/json type post data

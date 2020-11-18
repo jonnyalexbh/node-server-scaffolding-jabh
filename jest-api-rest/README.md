@@ -2,6 +2,14 @@
 
 _We are going to build a REST API which is going to connect to an external (public) API that is going to serve us content (users)_
 
+**Deploy heroku**
+
+```sh
+$ heroku git:clone -a jest-api-rest
+$ git push heroku master
+$ heroku logs --tail
+```
+
 **Start project**
 
 ```sh
