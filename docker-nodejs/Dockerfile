@@ -1,7 +1,22 @@
-FROM node:latest
-WORKDIR /usr/src/app
+FROM node:14.15.4
+
+# specifies the application directory
+WORKDIR /home/node/app
+
+# copying package.json file to the /home/node/app directory
+COPY package.json .
+COPY package-lock.json .
+
+# copying rest of the application to /home/node/app directory
 COPY . .
-ENV PORT=4000
+
+# installing npm
 RUN npm install
-EXPOSE $PORT
-ENTRYPOINT ["node", "app.js"]
+
+EXPOSE 4000
+
+# production
+# ENTRYPOINT ["node", "app.js"]
+
+# develop
+CMD ["npm", "run", "start:dev"]

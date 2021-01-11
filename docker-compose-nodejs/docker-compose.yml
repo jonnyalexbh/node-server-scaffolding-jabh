@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   app-nodejs:
     build: .
@@ -8,5 +9,5 @@ services:
     ports:
       - "8080:4000"
     volumes:
-      - ./:/usr/src/app
+      - ./:/home/node/app
       - /usr/src/app/node_modules
