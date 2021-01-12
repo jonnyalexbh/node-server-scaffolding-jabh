@@ -22,6 +22,16 @@ EXPOSE 3000
 
 CMD ./scripts/start.sh
 ```
+
+### docker-compose.override.yml
+
+```sh
+version: '3'
+
+services:
+  app-nodejs:
+    container_name: node_app_pg_100
+```
 ### Run docker-compose
 
 ```sh
