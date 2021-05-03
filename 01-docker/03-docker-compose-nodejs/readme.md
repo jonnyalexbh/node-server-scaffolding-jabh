@@ -40,18 +40,3 @@ services:
       - ./:/home/node/app
       - /usr/src/app/node_modules
 ```
-### Build app
-
-```sh
-$ docker-compose ps
-$ docker-compose build
-$ docker-compose logs
-$ docker-compose logs -f
-$ docker-compose logs <container_name>
-$ docker-compose logs -f <container_name>
-$ docker-compose up
-$ docker-compose up -d
-$ docker-compose up --build
-$ docker-compose down	
-$ docker exec -it test-docker bash
-```
