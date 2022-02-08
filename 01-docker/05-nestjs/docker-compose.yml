@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  nestjs-api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    container_name: nestjs-api

@@ -57,7 +57,28 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Build your Docker Image
 
+```bash
+# Build image
+$ docker build -f docker/api/Dockerfile -t docker-nodejs .
+
+# Run the app
+$ docker run -p 8080:3000 -d --name test-docker docker-nodejs
+
+# exec container
+$ docker exec -it test-docker bash
+```
+## Docker Compose
+
+```bash
+# docker compose override
+$ cp docker-compose.override.yml.dist docker-compose.override.yml
+
+# create and start containers
+$ docker-compose up
+
+```
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).

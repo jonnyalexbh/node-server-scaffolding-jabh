@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  nestjs-api:
+    volumes:
+      - .:/application
+      - /usr/src/app/node_modules
+    ports:
+      - 8081:3000
+    entrypoint: ['yarn', 'start:dev']
