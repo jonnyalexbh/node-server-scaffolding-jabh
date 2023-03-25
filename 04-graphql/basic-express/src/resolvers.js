@@ -14,8 +14,10 @@ const resolvers = {
     hello: () => {
       return 'Hello World'
     },
-    teams: () => {
-      return teams
+    getTeams: () => teams,
+    getTeam: (obj, args, context) => {
+      const team = teams.filter(team => team._id == args.id)
+      return team.pop();
     },
     jonny: () => {
       return 'Hello Jonny'

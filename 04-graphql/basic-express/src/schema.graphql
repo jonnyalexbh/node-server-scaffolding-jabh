@@ -5,6 +5,7 @@ type Team {
 
 type Query {
   hello: String
-  teams: [Team]
+  getTeams: [Team]
+  getTeam(id: ID!): Team
   jonny: String
 }
