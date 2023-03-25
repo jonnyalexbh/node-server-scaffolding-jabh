@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "start:dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
