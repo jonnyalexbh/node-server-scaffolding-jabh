@@ -10,14 +10,16 @@ const teams = [
 ];
 
 const resolvers = {
-  hello: () => {
-    return 'Hello World'
-  },
-  teams: () => {
-    return teams
-  },
-  jonny: () => {
-    return 'Hello Jonny'
+  Query: {
+    hello: () => {
+      return 'Hello World'
+    },
+    teams: () => {
+      return teams
+    },
+    jonny: () => {
+      return 'Hello Jonny'
+    }
   }
 }
 
