@@ -9,7 +9,7 @@ const teams = [
   },
 ];
 
-module.exports = {
+const resolvers = {
   hello: () => {
     return 'Hello World'
   },
@@ -20,3 +20,5 @@ module.exports = {
     return 'Hello Jonny'
   }
 }
+
+export default resolvers;
