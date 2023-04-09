@@ -1,0 +1,22 @@
+{
+  "name": "02-handle-with-http-errors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "start:dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2",
+    "http-errors": "2.0.0",
+    "pino": "8.11.0",
+    "pino-pretty": "10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.22"
+  }
+}
